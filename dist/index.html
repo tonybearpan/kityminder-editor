@@ -41,11 +41,18 @@
 			left: 0;
 			right: 0;
 		}
+        .expBt {
+            position: relative;
+            left: 68%;
+            top: 40%;
+            transform: translateY(-50%)
+        }
 	</style>
 </head>
 <body ng-app="kityminderDemo" ng-controller="MainController">
 <h1 class="editor-title">KityMinder Editor - Powered By FEX</h1>
 <kityminder-editor on-init="initEditor(editor, minder)"></kityminder-editor>
+<button type="button" class="btn btn-success expBt" onclick="ExportKM2json()">导出json</button>
 </body>
 
 <!-- bower:js -->
@@ -84,6 +91,10 @@
 					window.minder = minder;
 				};
 			});
+
+    function ExportKM2json() {
+        console.log(window.editor.minder.exportData('json')['fulfillValue'])
+    }
 
 </script>
 
