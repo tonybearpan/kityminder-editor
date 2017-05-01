@@ -95,7 +95,8 @@
 			});
 
     function ExportKM2json() {
-        console.log(window.editor.minder.exportData('json')['fulfillValue'])
+        var data = window.editor.minder.exportData('json')['fulfillValue']
+    	$.post('http://127.0.0.1:5000/td/', data)
     }
 
 </script>
